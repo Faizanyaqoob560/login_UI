@@ -6,9 +6,12 @@ class Loginpage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      child: const Center(
-        child: Text("login page"),
-      ),
-    );
+        child: Column(
+      children: [
+        const Center(
+          child: Text("login page"),
+        ),
+      ],
+    ));
   }
 }
