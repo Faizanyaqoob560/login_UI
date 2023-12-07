@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/utills/routes.dart';
 
 class Loginpage extends StatelessWidget {
   const Loginpage({Key? key}) : super(key: key);
 
-  void _loginButtonPressed() {
+  void onPressed() {
     // Your login button logic goes here
-    print("Login button pressed");
+
     // You can navigate to a new screen, perform authentication, etc.
   }
 
@@ -14,7 +15,7 @@ class Loginpage extends StatelessWidget {
     return Material(
       child: Column(
         children: [
-          Image(
+          const Image(
             image: NetworkImage(
                 "https://buffer.com/cdn-cgi/image/w=1000,fit=contain,q=90,f=auto/library/content/images/size/w600/2023/10/free-images.jpg"),
           ),
@@ -25,7 +26,7 @@ class Loginpage extends StatelessWidget {
             child: Text(
               "Welcome",
               style: TextStyle(
-                fontSize: 22,
+                fontSize: 32,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -55,11 +56,18 @@ class Loginpage extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: 20,
+                  height: 40,
                 ),
                 ElevatedButton(
-                  onPressed: _loginButtonPressed, // Set the function here
-                  child: Text("Login"),
+                  onPressed: () {
+                    Navigator.pushNamed(context, MyRoutes.HomeRoute);
+                  }, // Set the function here
+                  child: Text(
+                    "Login",
+                    style: TextStyle(
+                      color: Colors.deepPurple.shade400,
+                    ),
+                  ),
                 ),
               ],
             ),
