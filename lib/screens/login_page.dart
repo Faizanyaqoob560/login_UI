@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/utills/routes.dart';
 
-class Loginpage extends StatelessWidget {
+class Loginpage extends StatefulWidget {
   const Loginpage({Key? key}) : super(key: key);
 
-  void onPressed() {
-    // Your login button logic goes here
+  @override
+  State<Loginpage> createState() => _LoginpageState();
+}
 
-    // You can navigate to a new screen, perform authentication, etc.
-  }
+class _LoginpageState extends State<Loginpage> {
+  String name = "";
+  bool ChangeButton = false;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +26,7 @@ class Loginpage extends StatelessWidget {
           ),
           Center(
             child: Text(
-              "Welcome",
+              "Welcome $name",
               style: TextStyle(
                 fontSize: 32,
                 fontWeight: FontWeight.bold,
@@ -54,20 +56,27 @@ class Loginpage extends StatelessWidget {
                     labelText: "Password",
                     hintText: "Enter Password",
                   ),
+                  onChanged: (value) {
+                    name = value;
+                    setState(() {});
+                  },
                 ),
                 SizedBox(
                   height: 40,
                 ),
                 ElevatedButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, MyRoutes.HomeRoute);
-                  }, // Set the function here
                   child: Text(
                     "Login",
                     style: TextStyle(
                       color: Colors.deepPurple.shade400,
                     ),
                   ),
+                  onPressed: () {
+                    setState(() {
+                      ChangeButton = true;
+                    });
+                    //Navigator.pushNamed(context, MyRoutes.loginRoute);
+                  }, // Set the function here
                 ),
               ],
             ),
