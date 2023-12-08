@@ -10,7 +10,7 @@ class Loginpage extends StatefulWidget {
 
 class _LoginpageState extends State<Loginpage> {
   String name = "";
-  bool ChangeButton = false;
+  
 
   @override
   Widget build(BuildContext context) {
@@ -73,9 +73,9 @@ class _LoginpageState extends State<Loginpage> {
                   ),
                   onPressed: () {
                     setState(() {
-                      ChangeButton = true;
+                     
                     });
-                    //Navigator.pushNamed(context, MyRoutes.loginRoute);
+                    Navigator.pushNamed(context, MyRoutes.loginRoute);
                   }, // Set the function here
                 ),
               ],
