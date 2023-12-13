@@ -9,9 +9,10 @@ class Homepage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.deepPurple.shade100,
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.deepPurple.shade200,
+        elevation: 1.1,
+        backgroundColor: Colors.white,
         centerTitle: true,
         title: Text("catalog app"),
       ),
